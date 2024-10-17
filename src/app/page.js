@@ -31,8 +31,8 @@ export default function Home() {
       <h1 className="flex justify-center items-center">ceny złota 🤑🤑🤑</h1>
       <div className="flex flex-row flex-wrap justify-center items-center h-screen">
         {prices.length > 0 && prices.map((price, idx) => {
-          const currentPrice = price.cena;
-          const previousPrice = idx < prices.length - 1 ? prices[idx + 1].cena : null;
+          const currentPrice = price.cena.toFixed(2);
+          const previousPrice = idx < prices.length - 1 ? prices[idx + 1].cena.toFixed(2) : null;
 
           let arrowIcon = null;
           if (previousPrice !== null) {
@@ -44,9 +44,9 @@ export default function Home() {
           }
 
           return (
-            <Card key={idx} className="flex justify-center items-center w-[275px] h-[100px] ml-5">
+            <Card key={idx} className="flex justify-center items-center w-[275px] h-[100px] mt-5 ml-5">
               <div className="flex flex-col ml-10">
-              <CardTitle>cena: {currentPrice}Zł</CardTitle>
+              <CardTitle>cena: {currentPrice} zł</CardTitle>
               <CardDescription>data: {price.data}</CardDescription>
               </div>
               <CardContent>
