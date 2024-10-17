@@ -6,6 +6,7 @@ import {
   CardDescription,
   CardTitle,
 } from "@/components/ui/card"
+import { Separator } from "@/components/ui/separator";
 import { TrendingUp, TrendingDown } from "lucide-react";
 
 export default function Home() {
@@ -53,6 +54,7 @@ export default function Home() {
                 <CardTitle>cena: {currentPrice} zł</CardTitle>
                 <CardDescription>data: {price.data}</CardDescription>
               </div>
+              <Separator className="" orientation="vertical"/>
               <CardContent className="flex flex-row items-center">
                 {arrowIcon}
                 <span className="ml-2 mt-6">{priceDifference}zł</span>
